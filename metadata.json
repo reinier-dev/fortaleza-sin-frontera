@@ -1,0 +1,6 @@
+{
+  "name": "Fortaleza Sin Fronteras",
+  "description": "Comunidad de entrenamiento al aire libre. Entrena sin presión, sin comparaciones y en comunidad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
