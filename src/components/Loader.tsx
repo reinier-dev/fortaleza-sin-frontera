@@ -34,34 +34,28 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
           className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center pointer-events-auto select-none overflow-hidden"
           onClick={finishLoading}
         >
-          {/* Animated Logo Video Presentation */}
-          <div className="relative w-full h-full max-w-2xl max-h-[85vh] flex items-center justify-center px-4 bg-black">
-            {/* PC Video (Desktop / Tablet) */}
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              playsInline
-              onEnded={finishLoading}
-              className="hidden sm:block w-full h-full object-contain filter drop-shadow-[0_0_35px_rgba(179,18,23,0.6)] mix-blend-screen"
-            >
-              <source src="/video/logo_presentacion.mp4" type="video/mp4" />
-            </video>
+          {/* PC Video (Desktop / Tablet) — full screen, no borders */}
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            playsInline
+            onEnded={finishLoading}
+            className="hidden sm:block absolute inset-0 w-full h-full object-cover mix-blend-screen"
+          >
+            <source src="/video/logo_presentacion.mp4" type="video/mp4" />
+          </video>
 
-            {/* Mobile Video (Cell) */}
-            <video
-              autoPlay
-              muted
-              playsInline
-              onEnded={finishLoading}
-              className="block sm:hidden w-full h-full object-contain filter drop-shadow-[0_0_35px_rgba(179,18,23,0.6)] mix-blend-screen"
-            >
-              <source src="/video/logo_presentacion_cell.mp4" type="video/mp4" />
-            </video>
-
-            {/* Subtle glow effect behind video */}
-            <div className="absolute inset-0 bg-[#B31217]/10 blur-3xl rounded-full pointer-events-none -z-10 animate-pulse"></div>
-          </div>
+          {/* Mobile Video (Cell) — full screen, no borders */}
+          <video
+            autoPlay
+            muted
+            playsInline
+            onEnded={finishLoading}
+            className="block sm:hidden absolute inset-0 w-full h-full object-cover mix-blend-screen"
+          >
+            <source src="/video/logo_presentacion_cell.mp4" type="video/mp4" />
+          </video>
 
           {/* Optional skip hint */}
           <motion.p
