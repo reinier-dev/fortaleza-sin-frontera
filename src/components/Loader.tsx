@@ -43,7 +43,7 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
             onEnded={finishLoading}
             className="hidden sm:block absolute inset-0 w-full h-full object-cover mix-blend-screen"
           >
-            <source src="/video/logo_presentacion.mp4" type="video/mp4" />
+            <source src="/video/guantes%20y%20monta%C3%B1as%20PC.mp4" type="video/mp4" />
           </video>
 
           {/* Mobile Video (Cell) — full screen, no borders */}
@@ -54,7 +54,7 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
             onEnded={finishLoading}
             className="block sm:hidden absolute inset-0 w-full h-full object-cover mix-blend-screen"
           >
-            <source src="/video/logo_presentacion_cell.mp4" type="video/mp4" />
+            <source src="/video/guantes%20y%20monta%C3%B1as%20cell.mp4" type="video/mp4" />
           </video>
 
           {/* Optional skip hint */}
