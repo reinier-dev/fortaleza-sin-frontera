@@ -11,7 +11,8 @@ interface BookingModalProps {
 }
 
 export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
-  const [selectedDay, setSelectedDay] = useState('Lunes');
+  const [selectedDay, setSelectedDay] = useState(SCHEDULE_LOCATION.dayList[0]);
+  const [selectedTime, setSelectedTime] = useState(SCHEDULE_LOCATION.timeSlots[0]);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -34,7 +35,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
   };
 
   const handleOpenWhatsApp = () => {
-    const msg = BRAND_INFO.whatsappBookingMessage(name || 'Amigo/a', selectedDay);
+    const msg = BRAND_INFO.whatsappBookingMessage(name || 'Amigo/a', selectedDay, selectedTime);
     const url = `https://wa.me/${BRAND_INFO.whatsappNumber}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
     onClose();
@@ -74,22 +75,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 <label className="block text-xs font-medium text-[#AFAFAF] uppercase tracking-wider mb-2">
                   Selecciona el día que prefieres
                 </label>
-                <div className="grid grid-cols-3 gap-2.5">
-                  {['Lunes', 'Miércoles', 'Viernes'].map((day) => (
+                <div className="grid grid-cols-2 gap-2.5">
+                  {SCHEDULE_LOCATION.dayList.flatMap((day) =>
+                    SCHEDULE_LOCATION.timeSlots.map((time) => (
                     <button
-                      key={day}
+                      key={`${day}-${time}`}
                       type="button"
-                      onClick={() => setSelectedDay(day)}
+                      onClick={() => {
+                        setSelectedDay(day);
+                        setSelectedTime(time);
+                      }}
                       className={`py-3 px-2 rounded-xl text-xs font-semibold border transition-all duration-300 flex flex-col items-center gap-1 ${
-                        selectedDay === day
+                        selectedDay === day && selectedTime === time
                           ? 'bg-[#B31217] border-[#B31217] text-white shadow-[0_0_20px_rgba(179,18,23,0.4)]'
                           : 'bg-white/5 border-white/10 text-[#AFAFAF] hover:border-white/20 hover:text-white'
                       }`}
                     >
                       <span>{day}</span>
-                      <span className="text-[10px] opacity-80 font-normal">5:00 PM</span>
+                      <span className="text-[10px] opacity-80 font-normal">{time}</span>
                     </button>
-                  ))}
+                    ))
+                  )}
                 </div>
               </div>
 
@@ -131,7 +137,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 </div>
                 <div className="flex items-center gap-2 font-mono text-[#F5F5F5]">
                   <Clock className="w-3.5 h-3.5" />
-                  <span>5:00 PM</span>
+                  <span>{selectedTime}</span>
                 </div>
               </div>
 
@@ -156,7 +162,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               ¡Lugar Reservado!
             </h3>
             <p className="text-sm text-[#AFAFAF] mb-6 max-w-sm mx-auto leading-relaxed">
-              Te esperamos el <strong className="text-white">{selectedDay} a las 5:00 PM</strong> en <strong className="text-white">{SCHEDULE_LOCATION.locationTitle}</strong>.
+              Te esperamos el <strong className="text-white">{selectedDay} de {selectedTime}</strong> en <strong className="text-white">{SCHEDULE_LOCATION.locationTitle}</strong>.
             </p>
 
             <div className="p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 text-left text-xs space-y-2 text-[#AFAFAF]">
@@ -166,7 +172,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               </div>
               <div className="flex justify-between">
                 <span>Día seleccionado:</span>
-                <span className="text-[#F5F5F5] font-semibold">{selectedDay} · 5:00 PM</span>
+                <span className="text-[#F5F5F5] font-semibold">{selectedDay} · {selectedTime}</span>
               </div>
               <div className="flex justify-between">
                 <span>Costo:</span>

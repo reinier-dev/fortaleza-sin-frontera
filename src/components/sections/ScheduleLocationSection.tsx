@@ -92,7 +92,7 @@ export const ScheduleLocationSection: React.FC = () => {
               </h3>
 
               <p className="text-xs text-[#AFAFAF] leading-relaxed">
-                3 días por semana diseñados para dar descanso adecuado y progreso sostenido.
+                2 días por semana diseñados para dar descanso adecuado y progreso sostenido.
               </p>
             </div>
 
@@ -118,12 +118,14 @@ export const ScheduleLocationSection: React.FC = () => {
                 HORARIO
               </span>
 
-              <h3 className="font-heading font-extrabold text-4xl text-[#F5F5F5] mt-2 mb-2">
-                {SCHEDULE_LOCATION.time}
+              <h3 className="font-heading font-extrabold text-2xl text-[#F5F5F5] mt-2 mb-2">
+                {SCHEDULE_LOCATION.timeSlots.map((slot) => (
+                  <span key={slot} className="block">{slot}</span>
+                ))}
               </h3>
 
               <p className="text-xs text-[#AFAFAF] leading-relaxed">
-                Sesión de 60 minutos ideal para cerrar la tarde con energía renovada.
+                Sesión de 60 minutos ideal para empezar la mañana con energía renovada.
               </p>
             </div>
 

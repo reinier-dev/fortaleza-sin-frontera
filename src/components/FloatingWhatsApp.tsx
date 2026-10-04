@@ -60,7 +60,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
           <div className="space-y-2 mb-4">
             <button
               onClick={() => {
-                setCustomMsg('Hola! Quiero reservar mi clase gratis de prueba este Lunes / Miércoles / Viernes.');
+                setCustomMsg('Hola! Quiero reservar mi clase gratis de prueba este Sábado / Domingo.');
               }}
               className="w-full text-left text-xs px-3 py-2 rounded-lg bg-white/5 hover:bg-[#B31217]/20 hover:border-[#B31217]/40 border border-white/5 text-[#F5F5F5] transition-all duration-200 flex items-center justify-between group"
             >

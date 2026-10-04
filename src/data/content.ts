@@ -3,8 +3,8 @@ export const BRAND_INFO = {
   tagline: "You don't have to be fit to belong here.",
   whatsappNumber: "5215512345678", // Clean default number
   whatsappMessageDefault: "Hola, quisiera información sobre las clases gratuitas de prueba en Fortaleza Sin Fronteras.",
-  whatsappBookingMessage: (name: string, day: string) => 
-    `Hola! Mi nombre es ${name}. Me gustaría reservar mi clase gratis de prueba para el día ${day} a las 5:00 PM en Parque Medalla de Honor.`,
+  whatsappBookingMessage: (name: string, day: string, time: string) => 
+    `Hola! Mi nombre es ${name}. Me gustaría reservar mi clase gratis de prueba para el día ${day} de ${time} en Parque Medalla de Honor.`,
   whatsappGroupLink: "https://chat.whatsapp.com/demo-fortaleza-sin-fronteras",
 };
 
@@ -82,8 +82,10 @@ export const SCHEDULE_LOCATION = {
   locationTitle: "Parque Medalla de Honor",
   locationSubtitle: "Aire libre · Zona verde arbolada · Pista natural",
   locationAddress: "Av. de la Libertad s/n, Entrada Principal",
-  days: "Lunes · Miércoles · Viernes",
-  time: "5:00 PM",
+  days: "Sábado · Domingo",
+  time: "8:00 AM – 9:00 AM · 10:00 AM – 11:00 AM",
+  dayList: ["Sábado", "Domingo"],
+  timeSlots: ["8:00 AM – 9:00 AM", "10:00 AM – 11:00 AM"],
   whatsappCTA: "Consultar por WhatsApp",
   mapImage: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=1200&auto=format&fit=crop",
 };
