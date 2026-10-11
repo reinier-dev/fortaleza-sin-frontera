@@ -124,7 +124,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Ej. +52 55 1234 5678"
+                  placeholder="Tu número de teléfono"
                   className="w-full bg-[#050505] border border-white/15 rounded-xl px-4 py-3 text-sm text-[#F5F5F5] placeholder-[#AFAFAF]/40 focus:outline-none focus:border-[#B31217] transition-colors"
                 />
               </div>

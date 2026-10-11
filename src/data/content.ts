@@ -1,7 +1,7 @@
 export const BRAND_INFO = {
   name: "FORTALEZA SIN FRONTERAS",
   tagline: "You don't have to be fit to belong here.",
-  whatsappNumber: "5215512345678", // Clean default number
+  whatsappNumber: "15023816457", // Official academy number: +1 (502) 381-6457
   whatsappMessageDefault: "Hola, quisiera información sobre las clases gratuitas de prueba en Fortaleza Sin Fronteras.",
   whatsappBookingMessage: (name: string, day: string, time: string) => 
     `Hola! Mi nombre es ${name}. Me gustaría reservar mi clase gratis de prueba para el día ${day} de ${time} en Parque Medalla de Honor.`,
