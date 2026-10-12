@@ -46,13 +46,26 @@ export const Footer: React.FC = () => {
 
       </div>
 
-      {/* Social profiles (extra bottom space on mobile keeps them clear of the floating WhatsApp button) */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-10 pt-8 pb-12 md:pb-0 border-t border-white/5 flex flex-col items-center gap-5">
+      {/* Social profiles */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-10 pt-8 border-t border-white/5 flex flex-col items-center gap-5">
         <p className="text-[11px] font-semibold text-[#AFAFAF] uppercase tracking-widest">
           {SOCIAL_CONTENT.footerHeading}
         </p>
         <SocialLinks variant="compact" />
       </div>
+
+      {/* Web credit (extra bottom space on mobile keeps the footer clear of the floating WhatsApp button) */}
+      <p className="max-w-7xl mx-auto px-6 md:px-12 mt-8 pb-12 md:pb-0 text-center font-light text-[11px] text-[#AFAFAF]/80">
+        Website designed &amp; developed by{' '}
+        <a
+          href="https://reinierdev.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-normal text-[#AFAFAF] hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:underline underline-offset-4 transition-colors duration-300"
+        >
+          ReinierDev
+        </a>
+      </p>
     </footer>
   );
 };
