@@ -4,7 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
-import { FOUNDER_CONTENT } from '../../data/content';
+import { FOUNDER_CONTENT, SOCIAL_CONTENT } from '../../data/content';
+import { SocialLinks } from '../SocialLinks';
 
 export const FounderSection: React.FC = () => {
   return (
@@ -84,6 +85,14 @@ export const FounderSection: React.FC = () => {
               <p className="text-sm sm:text-base text-[#F5F5F5] italic font-serif leading-relaxed">
                 "{FOUNDER_CONTENT.quote}"
               </p>
+            </div>
+
+            {/* Founder social profiles */}
+            <div className="mt-8">
+              <p className="text-[11px] font-semibold text-[#AFAFAF] uppercase tracking-widest mb-4">
+                {SOCIAL_CONTENT.founderHeading}
+              </p>
+              <SocialLinks variant="labeled" />
             </div>
           </motion.div>
 

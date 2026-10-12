@@ -1,3 +1,5 @@
+import { SocialPlatform, type SocialLink } from '../types';
+
 export const BRAND_INFO = {
   name: "FORTALEZA SIN FRONTERAS",
   tagline: "You don't have to be fit to belong here.",
@@ -95,3 +97,43 @@ export const FINAL_CTA = {
   subtext: "Únete a nuestro grupo oficial de WhatsApp para enterarte de convocatorias, puntos de encuentro y eventos especiales.",
   buttonText: "Únete al Grupo",
 };
+
+export const SOCIAL_CONTENT = {
+  founderHeading: "Conoce más de mi trayectoria",
+  footerHeading: "Síguenos en redes sociales",
+};
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    id: "youtube",
+    platform: SocialPlatform.YouTube,
+    name: "YouTube",
+    handle: "@iraisht",
+    href: "https://www.youtube.com/@iraisht",
+    ariaLabel: "YouTube de Irais Hernández (@iraisht)",
+  },
+  {
+    id: "tiktok",
+    platform: SocialPlatform.TikTok,
+    name: "TikTok",
+    handle: "@iraisadrian",
+    href: "https://www.tiktok.com/@iraisadrian",
+    ariaLabel: "TikTok de Irais Hernández (@iraisadrian)",
+  },
+  {
+    id: "facebook-personal",
+    platform: SocialPlatform.Facebook,
+    name: "Facebook",
+    handle: "Personal",
+    href: "https://www.facebook.com/irais.hernandez.524",
+    ariaLabel: "Facebook personal de Irais Hernández",
+  },
+  {
+    id: "facebook-iraisht",
+    platform: SocialPlatform.Facebook,
+    name: "Facebook",
+    handle: "IraisHT",
+    href: "https://www.facebook.com/IraisHT",
+    ariaLabel: "Facebook IraisHT de Irais Hernández",
+  },
+];

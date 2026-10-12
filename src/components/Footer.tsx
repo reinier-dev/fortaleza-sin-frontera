@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
-import { BRAND_INFO, SCHEDULE_LOCATION } from '../data/content';
+import { BRAND_INFO, SCHEDULE_LOCATION, SOCIAL_CONTENT } from '../data/content';
+import { SocialLinks } from './SocialLinks';
 
 export const Footer: React.FC = () => {
   return (
@@ -43,6 +44,14 @@ export const Footer: React.FC = () => {
           </p>
         </div>
 
+      </div>
+
+      {/* Social profiles (extra bottom space on mobile keeps them clear of the floating WhatsApp button) */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-10 pt-8 pb-12 md:pb-0 border-t border-white/5 flex flex-col items-center gap-5">
+        <p className="text-[11px] font-semibold text-[#AFAFAF] uppercase tracking-widest">
+          {SOCIAL_CONTENT.footerHeading}
+        </p>
+        <SocialLinks variant="compact" />
       </div>
     </footer>
   );
